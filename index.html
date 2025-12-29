@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hand Controlled Particles</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+  <!-- MediaPipe -->
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.min.js"></script>
+</head>
+
+<body>
+  <div id="ui">
+    <button id="toggleVideo">Video Feed: OFF</button>
+    <button id="toggleSkeleton">Hand Skeleton: OFF</button>
+    <button id="calibClosed">Calibrate Closed</button>
+    <button id="calibOpen">Calibrate Open</button>
+    <input type="color" id="colorPicker" value="#ffffff" />
+    <select id="shapePicker">
+      <option value="circle">Circle</option>
+      <option value="square">Square</option>
+      <option value="star">Star</option>
+    </select>
+    <button id="pauseZoom">Pause Zoom (Space)</button>
+  </div>
+
+  <div id="videoContainer">
+    <video id="video" autoplay playsinline></video>
+  </div>
+  <canvas id="handCanvas"></canvas>
+  <canvas id="three-canvas"></canvas>
+  
+  <div id="pauseIndicator">⏸</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

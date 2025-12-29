@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  background: black;
+  font-family: sans-serif;
+}
+
+#videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#videoContainer.visible {
+  opacity: 1;
+}
+
+#videoContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  pointer-events: none;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#ui {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+
+#ui button,
+#ui select,
+#ui input {
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: 1px solid #444;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+#ui button:hover {
+  background: rgba(50,50,50,0.9);
+  border-color: #666;
+}
+
+#ui button:active {
+  transform: scale(0.98);
+}
+
+#ui button.active {
+  background: rgba(0,100,200,0.7);
+  border-color: #0066cc;
+}
+
+#pauseIndicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 48px;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.3s;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+#pauseIndicator.visible {
+  opacity: 0.8;
+}
