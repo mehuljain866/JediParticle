@@ -167,6 +167,13 @@ const COUNT = 3000;
 
 ---
 
+Related Projects
+JediParticle serves as the core interaction system.
+The same interaction model is further explored in applied contexts such as:
+– Hand-Controlled Globe (gesture-based planetary navigation) - https://github.com/mehuljain866/God-Simulator
+
+---
+
 ## 📄 License
 
 MIT — free to use, modify, and remix.
